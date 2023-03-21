@@ -6,15 +6,12 @@ const { Server } = require('socket.io');
 const io = new Server(expressServer);
 
 io.on('connection', (socket) => {
-  console.log("User Connected");
+  console.log("User Connected")
 
-  socket.on('disconnect', () => {
-    console.log("User Disconnected");
-  });
 
-  socket.on('error', (err) => {
-    console.error("Socket Error:", err);
-  });
+  setTimeout(()=>{
+    socket.send("Data Came From Server site");
+  },1000)
 });
 
 app.get('/', (req, res) => {
