@@ -7,8 +7,11 @@
     <title>socket first project</title>
 </head>
 <body>
-    <h1 id="myTime"></h1>
+    <h1 id="">transfer data clint to server</h1>
 
+
+        <input type="text" id="name"/>
+        <button onclick="send()" id="send">Send</button>
 
 
 
@@ -16,10 +19,11 @@
     <script>
         let socket=io();
 
-        socket.on('message',(msg)=>{
-            document.getElementById('myTime').innerHTML=""
-            document.getElementById('myTime').innerHTML=msg
-        })
+        function send(){
+           let name= document.getElementById('name').value;
+           
+           socket.send(name);
+        }
     </script>
 </body>
 </html>

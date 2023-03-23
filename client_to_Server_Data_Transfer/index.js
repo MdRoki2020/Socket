@@ -9,11 +9,9 @@ io.on('connection', (socket) => {
   console.log("User Connected")
 
 
-setInterval(()=>{
-  let d=new Date();
-  let t=d.getSeconds();
-  socket.send(t);
-},1000)
+socket.on('message',(msg)=>{
+  console.log(msg);
+})
 
 
 })
