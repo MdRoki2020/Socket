@@ -22,7 +22,7 @@
         function send(){
            let name= document.getElementById('name').value;
            
-           socket.send(name);
+           socket.emit("MyEvent",name);
         }
     </script>
 </body>

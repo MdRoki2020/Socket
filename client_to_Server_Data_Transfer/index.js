@@ -9,7 +9,7 @@ io.on('connection', (socket) => {
   console.log("User Connected")
 
 
-socket.on('message',(msg)=>{
+socket.on('MyEvent',(msg)=>{
   console.log(msg);
 })
 
