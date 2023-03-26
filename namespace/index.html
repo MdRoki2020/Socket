@@ -7,23 +7,18 @@
     <title>socket first project</title>
 </head>
 <body>
-    <h1 id="">transfer data clint to server</h1>
 
-
-        <input type="text" id="name"/>
-        <button onclick="send()" id="send">Send</button>
+    <h1 id="msg"></h1>
 
 
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        let socket=io();
+        let socket=io("/sell");
 
-        function send(){
-           let name= document.getElementById('name').value;
-           
-           socket.send(name);
-        }
+        socket.on("MyEvent",function(data){
+            document.getElementById('msg').innerHTML=data;
+        })
     </script>
 </body>
 </html>
