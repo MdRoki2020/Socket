@@ -14,7 +14,7 @@ app.get('/', (req,res)=>{
 
 io.on('connection',(socket)=>{
     socket.on('chat',(msg)=>{
-        console.log(msg);
+        io.emit('chat_transfer',msg)
     })
 })
 
